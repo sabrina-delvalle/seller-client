@@ -89,7 +89,7 @@ export default function Input() {
             currentAddress ?
             <div>
                 <label htmlFor="company-list"></label>
-                <select name="company" id="company-list" className="border rounded-lg p-5 text-lg w-80 bg-neutral-100/50 outline-none focus:border-neutral-300 focus:border text-neutral-500 text-center placeholder-neutral-300 opacity-50 m-12" data-aos="zoom-in" onClick={selectCompany}>
+                <select name="company" id="company-list" className="border rounded-lg p-5 text-lg w-80 bg-neutral-100/50 outline-none focus:border-neutral-300 focus:border text-neutral-500 text-center placeholder-neutral-300 opacity-50 m-12" data-aos="zoom-in" onChange={selectCompany}>
                 <option value="" className="">choose company</option>
                 {companiesList}
                 </select>
