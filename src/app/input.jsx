@@ -52,9 +52,11 @@ export default function Input() {
     }
 
     function selectCompany(e) {
-        console.log('current company to appear:', e.target.value)
-        setCompany(listOfCompanies.filter(elem => elem.fields.company_name === e.target.value)[0].fields);
-        setIsCompany(true)
+        if(e.target.value){
+            console.log('current company to appear:', e.target.value)
+            setCompany(listOfCompanies.filter(elem => elem.fields.company_name === e.target.value)[0].fields);
+            setIsCompany(true)
+        }
     }
 
     const companiesList = listOfCompanies.map((company) => (
@@ -128,7 +130,7 @@ export default function Input() {
                 </div>
             </ul>
             :
-            <p className="bg-gray-300 h-96 w-96"></p>
+            <p></p>
             }
         </div>
         </div>
