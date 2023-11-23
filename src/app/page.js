@@ -7,7 +7,7 @@ import Footer from "./footer";
 export default function Home() {
     
   return (
-      <div className="font-serif">
+      <div className="font-serif overflow-hidden">
             <Header />
             <Input />
             <Footer />

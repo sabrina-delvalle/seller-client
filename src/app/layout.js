@@ -11,6 +11,11 @@ import './globals.css'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Liventi Company's List</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" type="image/x-icon" href="/favicon.png" />
+      </head>
       <body>{children}</body>
     </html>
   )
