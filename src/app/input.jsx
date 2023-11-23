@@ -49,8 +49,8 @@ export default function Input() {
   return (
     <div>
         <div className="flex flex-col items-center pt-10">
-                <p className="text-[150px] text-neutral-700">Insert</p>
-                <p className="tex text-[150px] text-neutral-700">Email</p>
+                <p className="text-[150px] max-sm:text-8xl max-sm:mt-20 text-neutral-700">Insert</p>
+                <p className="tex text-[150px] max-sm:text-8xl text-neutral-700">Email</p>
         </div>
 
         <div className="flex flex-col items-center justify-center mb-20">
@@ -82,7 +82,7 @@ export default function Input() {
         <div className="p-10">
         {
             company?
-            <ul data-aos="zoom-in" className="flex flex-row bg-slate-600/10 rounded-xl p-8 justify-center items-start text-neutral-500 shadow-xl">
+            <ul data-aos="zoom-in" className="flex flex-row bg-slate-600/10 rounded-xl p-8 justify-center items-start text-neutral-500 shadow-xl sm:w-56">
                 <div>
                     <li className="p-2">-</li>
                     <li className="p-2">𖡡</li>
