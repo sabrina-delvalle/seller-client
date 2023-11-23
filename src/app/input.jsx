@@ -68,7 +68,7 @@ export default function Input() {
   return (
     <div>
         <div className="flex flex-col items-center pt-56 max-md:pt-32">
-                <p className="text-[75px] max-md:text-3xl max-md:mt-5 text-neutral-700">Your Company's List</p>
+                <p className="text-[75px] max-md:text-3xl max-md:mt-5 text-neutral-700">Your Company&prime;s List</p>
         </div>
 
         <div className="flex flex-col items-center justify-center mb-40">
