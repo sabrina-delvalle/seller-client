@@ -18,7 +18,7 @@ export default function Input() {
 
     useEffect(() => {
         Aos.init({ duration: 2000, mirror: true });
-        console.log(formData);
+        //console.log(formData);
       }, [formData])
 
     async function onSubmit(event) {
@@ -50,9 +50,11 @@ export default function Input() {
     }
 
     function selectCompany(e) {
-                console.log('current company to appear:', e.target.value)
-                setCompany(listOfCompanies.filter(elem => elem.fields.company_name === e.target.value)[0].fields);
-                setIsCompany(true)
+        if(e.target.value!==''){
+            console.log('current company to appear:', e.target.value)
+            setCompany(listOfCompanies.filter(elem => elem.fields.company_name === e.target.value)[0].fields);
+            setIsCompany(true)
+        }
     }
 
     const companiesList = listOfCompanies.map((company) => (
@@ -63,21 +65,21 @@ export default function Input() {
     
   return (
     <div>
-        <div className="flex flex-col items-center pt-56 max-md:pt-32">
-                <p className="text-[75px] max-md:text-3xl max-md:mt-5 text-neutral-700">Your Company&prime;s List</p>
+        <div className="flex flex-col items-center pt-56 max-md:pt-32 max-sm:h-48">
+                <p className="text-[75px] max-md:text-3xl max-md:mt-5 text-neutral-600 max-lg:text-[60px]">Your Company&prime;s List</p>
         </div>
 
-        <div className="flex flex-col items-center justify-center mb-40">
-        <p className="p-16 max-md:p-7">---------------------</p>
+        <div className="flex flex-col items-center justify-center mb-40 max-sm:mb-5">
+        <p className="p-16 max-md:p-16">---------------------</p>
         <br />
         {
         validEmail ?         
         <form data-aos="fade-right" onSubmit={onSubmit}>
-        <input type="email" name="email" placeholder="insert a valid email " className="border border-neutral-600  rounded-lg p-4 w-80 outline-none focus:border-red-500 focus:border-2 text-neutral-900 text-lg text-center placeholder-gray-800 focus:placeholder-red-500 opacity-50 m-12" onChange={e => { const targetName =  e.target.value; setFormData({formData, email: targetName}) }} value={ formData.email }/>
+            <input type="email" name="email" placeholder="insert a valid email " className="border border-neutral-600  rounded-lg p-4 w-80 outline-none focus:border-red-500 focus:border-2 text-neutral-900 text-lg text-center placeholder-gray-800 focus:placeholder-red-500 opacity-50 m-12 max-sm:w-72 max-sm:h-16 max-sm:text-lg" onChange={e => { const targetName =  e.target.value; setFormData({formData, email: targetName}) }} value={ formData.email }/>
         <button type='submit' className="hidden">Submit</button>
-    </form>   :
+        </form>   :
         <form data-aos="fade-right" onSubmit={onSubmit}>
-            <input type="email" name="email" placeholder="insert email " className="border border-neutral-600  rounded-lg p-4 w-80 outline-none focus:border-neutral-300 focus:border-2 text-neutral-900 text-lg text-center placeholder-gray-800 opacity-50 m-12" onChange={e => { const targetName =  e.target.value; setFormData({formData, email: targetName}) }} value={ formData.email }/>
+            <input type="email" name="email" placeholder="insert email " className="border border-neutral-600  rounded-lg p-4 w-80 outline-none focus:border-neutral-300 focus:border-2 text-neutral-900 text-lg text-center placeholder-gray-800 opacity-50 m-12 max-sm:w-72 max-sm:h-16 max-sm:text-lg" onChange={e => { const targetName =  e.target.value; setFormData({formData, email: targetName}) }} value={ formData.email }/>
             <button type='submit' className="hidden">Submit</button>
         </form> 
         }
@@ -85,7 +87,7 @@ export default function Input() {
             currentAddress ?
             <div>
                 <label htmlFor="company-list"></label>
-                <select name="company" id="company-list" className="border rounded-lg p-5 text-lg w-80 bg-neutral-100/50 outline-none focus:border-neutral-300 focus:border text-neutral-500 text-center placeholder-neutral-300 opacity-50 m-12" data-aos="zoom-in" onChange={selectCompany}>
+                <select name="company" id="company-list" className="border rounded-lg p-5 text-lg w-80 bg-neutral-100/50 outline-none focus:border-neutral-300 focus:border text-neutral-500 text-center placeholder-neutral-300 opacity-50 m-12 -mb-6 max-sm:w-72 max-md:-mb-4" data-aos="zoom-in" onChange={selectCompany}>
                 <option value="" className="">choose company</option>
                 {companiesList}
                 </select>
@@ -102,10 +104,11 @@ export default function Input() {
                         /> 
                     </div>:<p></p>
         }
-        <div className="p-10 hover:scale-105 ease-in duration-300">
+        <div className="p-16 hover:scale-105 ease-in duration-300 max-sm:p-10 max-sm:mb-14 flex flex-col items-center">
+        {isCompany ? <h1 data-aos="fade-left" className="text-neutral-400 p-20 text-6xl -mb-10 max-sm:ml-0 max-sm:p-16 max-md:m-1 max-sm:text-4xl max-sm:w-12/12">{company.company_name}</h1> : <p></p>}
         {
             isCompany?
-            <ul data-aos="zoom-in" className="flex flex-row bg-slate-600/10 rounded-xl p-8 justify-center items-start text-neutral-500 shadow-xl cursor-pointer">
+            <ul data-aos="zoom-in" className="flex flex-row bg-slate-600/10 rounded-xl p-8 justify-center items-start text-neutral-500 shadow-xl cursor-pointer w-2/4 max-md:w-10/12 ">
                 <div data-aos="fade-right" className="pr-3">
                     <li className="p-2"><svg className="h-6 w-6 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="7" r="4" />  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></li>
                     <li className="p-2"><svg className="h-6 w-6 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -124,7 +127,7 @@ export default function Input() {
                 </div>
                 <div data-aos="fade-left">
                     <li className="p-2">{company.first_name} {company.last_name}</li>
-                    <li className="p-2">{company.address}</li>
+                    <li className="p-2" >{company.address}</li>
                     <li className="p-2">{company.county} {company.city} {company.state}</li>
                     <li className="p-2">{company.zip}</li>
                     <li className="p-2">{company.phone1}/{company.phone2}</li>
