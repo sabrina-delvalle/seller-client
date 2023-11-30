@@ -76,7 +76,7 @@ function backMain() {
       {currentAddress ? 
       <div>
       <div className="grid grid-cols-12 h-screen max-sm:flex max-sm:flex-col">
-      <div className="grid grid-rows-6 bg-neutral text-white col-span-2 max-lg:col-span-3 bg-building-bg bg-center bg-cover">
+      <div className="grid grid-rows-6 bg-neutral text-white col-span-2 max-lg:col-span-3 bg-building-bg bg-center bg-cover h-screen max-md:h-20">
         <p className="grid justify-items-center content-center row-span-1 bg-neutral-300/30 max-sm:hidden"><a href="https://www.pieroliventi.com/" target="_blank"><Image
           src={white_logo}
           alt="css_profile"
@@ -102,39 +102,39 @@ function backMain() {
         </div>
         { isCompany ? 
         <div className="grid row-span-5 justify-items-center place-items-start mb-16 max-sm:mt-32 max-xl:mt-0">
-        <h1 className="flex items-center justify-center row-span-3 max-lg:mt-3 max-xl:mt-0 text-neutral-900 text-5xl mt-16 opacity-80 font-semibold max-lg:text-3xl max-sm:text-2xl max-xl:text-3xl max-sm:hidden">{company.company_name}</h1>
+        <h1 className="flex items-center justify-center row-span-3 max-lg:mt-3 max-xl:mt-0 text-neutral-900 text-4xl mt-16 opacity-80 font-semibold max-lg:text-3xl max-sm:text-2xl max-xl:text-3xl max-sm:hidden -mb-20">{company.company_name}</h1>
         <div className="flex flex-col items-center -mt-20 max-lg:-mt-52 max-sm:-mt-20">
-              <div className="flex flex-row items-center justify-center p-2 ml-6 w-36 h-36 bg-gray-100 rounded-full shadow-md hover:cursor-pointer"><svg className="h-16 w-16 text-sky-600"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="7" r="4" />  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></div>
+              <div className="flex flex-row items-center justify-center p-2 ml-6 w-32 h-32 bg-gray-100 rounded-full shadow-md hover:cursor-pointer"><svg className="h-16 w-16 text-sky-600"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="7" r="4" />  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></div>
               <div className="flex items-start text-2xl font-light pl-8 text-sky-700">{company.first_name} {company.last_name}</div>
             </div>
           <div className="flex flex-col flex-start items-start text-gray-800 bg-gray-100 w-auto rounded-3xl px-9 shadow-xl opacity-70 max-sm:px-0 max-sm:mt-10">
 
-            <div className="flex flex-row items-center justify-start p-2 ml-6">
+            <div className="flex flex-row items-center justify-start p-1 ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.address}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.address}</div>
             </div>
-            <div className="flex flex-row items-center justify-start p-2  ml-6">
+            <div className="flex flex-row items-center justify-start p-1  ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M21 3L14.5 21a.55 .55 0 0 1 -1 0L10 14L3 10.5a.55 .55 0 0 1 0 -1L21 3" /></svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.county} {company.city} {company.state}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.county} {company.city} {company.state}</div>
             </div>
-            <div className="flex flex-row items-center justify-start p-2  ml-6">
+            <div className="flex flex-row items-center justify-start p-1  ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="18" y1="6" x2="18" y2="6.01" />  <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />  <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />  <line x1="9" y1="4" x2="9" y2="17" />  <line x1="15" y1="15" x2="15" y2="20" /></svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.zip}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.zip}</div>
             </div>
-            <div className="flex flex-row items-center justify-start p-2  ml-6">
+            <div className="flex flex-row items-center justify-start p-1  ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />  <line x1="12" y1="18" x2="12.01" y2="18" /></svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.phone1}/{company.phone2}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.phone1}/{company.phone2}</div>
             </div>
-            <div className="flex flex-row items-center justify-start p-2  ml-6">
+            <div className="flex flex-row items-center justify-start p-1  ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />  <polyline points="22,6 12,13 2,6" /></svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.email}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.email}</div>
             </div>
-            <div className="flex flex-row items-center justify-start p-2  ml-6">
+            <div className="flex flex-row items-center justify-start p-1  ml-6">
               <div className="grid justify-items-center content-center col-span-1"><svg className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-gray-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg></div>
-              <div className="flex items-start text-xl font-light pl-10 max-sm:text-sm">{company.web}</div>
+              <div className="flex items-start text-md font-light pl-10 max-sm:text-sm">{company.web}</div>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ function backMain() {
      </div>
        : 
 
-       <div>
+       <div >
       <div className="font-sans overflow-hidden bg-building-bg bg-center bg-cover h-screen flex flex-col items-center justify-center">
                 <>
       {/*
