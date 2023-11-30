@@ -250,7 +250,7 @@ function backMain() {
           }
 
           <p className="mt-10 text-center text-sm text-gray-500">
-                Company's Lists / {'  '}
+                Company&prime;s Lists / {'  '}
             <a href="http://localhost:3000/seller-profile" className="font-semibold leading-6 text-cyan-600 hover:text-cyan-500">
               Access
             </a>
